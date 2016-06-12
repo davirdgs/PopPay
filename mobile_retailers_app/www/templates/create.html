@@ -1,0 +1,211 @@
+
+<ion-content class="padding bgazul" style="padding-bottom: 400px; overflow: auto;">
+
+ <div data-role="main" class="ui-content styleSubPages">
+
+
+               <div id="part_price">
+                 <div class="row" style="padding-top:20px">
+                    <div class="col center">
+                     <h4>Iniciando Transação</h4>
+                     </div>
+                 </div>
+                <div class="row" style="padding-top:20px">
+                        <br>
+                      <div class="col center">
+                          <h2>Receber</h2>
+                       </div>
+                   </div>
+                  <div class="list list-inset">
+                   <!--  <label class="item item-input">
+                      <i class="icon ion-cash placeholder-icon"></i>
+                        <input type="number" min=19  class="form-control" placeholder="Qual o valor da transação?" required>
+                    </label>
+ -->
+                    <label class="item item-input">
+                      <span class="input-label">Valor da Transação</span>
+                      <input ng-model="transac.price" ng-init="transac.price='10,00' " type="tel">
+                    </label>
+                  </div>
+
+                  <div class="list list-inset">
+                    <label class="item item-input">
+                      <i class="icon ion-plus placeholder-icon"></i>
+                        <input type="text" ng-model="transac.description" class="form-control" placeholder="Caso queira, descreva aqui a transação." required>
+                    </label>
+                  </div>
+
+                  <div class="button-bar ">
+                        <button class="button icon-right ion-android-add-circle button-calm margin10" ng-click="createQRCode()"  data-iconpos="right" >Criar código da Transação</button>
+                  </div>
+              </div>
+
+
+              <div id="part_qrcode">
+                   <div class="row">
+                      <div class="col center">
+                      
+                      <label class="smalllabel"> Seu código para receber o pagamento foi gerado.</label>
+                      <span></span>
+                      <label class="mediumlabel"> Valor a ser recebido:  <span class="green">R$ {{transac.price}}</span></label>
+                      
+                        </div>
+                    </div>
+                 <div id="qrcode" class="qrcode"></div>
+
+                   <div class="button-bar " style="padding-top:20px;width:80%;margin-left:10%;">
+                        <button class="button  button-cancel margin10" ng-click="cancelProcess()"  data-iconpos="right" >Cancelar Compra</button>
+                  </div>
+
+
+              </div>
+
+
+              <div id="part_waiting">
+                    <div class="row">
+                      <div class="col center">
+                           <label class="mediumlabel">Aguardando a confirmação da transação por parte do cliente.</label>
+                      </div>
+                    </div>
+
+
+                     <ion-spinner icon="lines" class="spinner-calm" style="    padding-left: 148px;"></ion-spinner>
+
+                       <div class="button-bar " style="padding-top:20px;width:80%;margin-left:10%;">
+                        <button class="button icon-right ion-android-add-circle button-calm margin10" ng-click="continueRunning()"  data-iconpos="right" >Continuar Operações</button>
+                    </div>
+                       <div class="button-bar " style="padding-top:20px;width:80%;margin-left:10%;">
+                        <button class="button  button-cancel margin10" ng-click="cancelProcess()"  data-iconpos="right" >Cancelar Compra</button>
+                  </div>
+              </div>
+
+
+            <div id="part_finish">
+
+               <div class="row">
+                <div class="col center">
+                     <label class="mediumlabel">Transação concluída pelo cliente Fulano da Silva. Seu pagamento foi recebido </label>
+                </div>
+              </div>
+
+
+                    <div class="pretty_box">
+                     <i class="icon ion-checkmark pretty_icon" ></i>
+                  </div>
+
+                   <div class="button-bar " style="padding-top:20px;width:80%;margin-left:10%;">
+                        <button class="button  button-cancel margin10" ng-click="newTransaction()"  data-iconpos="right" >Realizar outra Transação</button>
+                  </div>
+
+
+              </div>
+
+
+<!-- 
+              <div class="list list-inset">
+                <label class="item item-input">
+                  <i class="icon placeholder-icon">a)</i>
+                  <input type="text" id="answer_a" ng-model="question.answerA" name="answer[]" class="form-control" placeholder="Alternativa (a)" required>
+                </label>
+                <label class="item item-input">
+                  <i class="icon placeholder-icon">b)</i>
+                  <input type="text" id="answer_b" ng-model="question.answerB" name="answer[]" class="form-control" placeholder="Alternativa (b)"required>
+                </label>
+                <label class="item item-input">
+                  <i class="icon placeholder-icon">c)</i>
+                    <input type="text" id="answer_c" ng-model="question.answerC" name="answer[]" class="form-control" placeholder="Alternativa (c)"required>
+                </label>
+                <label class="item item-input">
+                  <i class="icon placeholder-icon">d)</i>
+                   <input  type="text" id="answer_d" ng-model="question.answerD" name="answer[]" class="form-control" placeholder="Alternativa (d)"required>
+                </label>
+              </div>
+
+            <div class="list">
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Resposta Correta: 
+                </div>
+                <select name="answer_correct"  ng-model="question.rightAnswer" >
+                  <option value="a"  >A</option>
+                  <option value="c"  selected>B</option>
+                  <option value="c" >C</option>
+                   <option value="d" >D</option>
+                </select>
+              </label>
+            
+             <label class="item item-input item-select">
+                <div class="input-label">
+                  Nº Respostas:
+                </div>
+                <select name="lim_answers"  ng-model="question.lim_answers" >
+                  <option value="1"  selected>1</option>
+                  <option value="2" >2</option>
+                  <option value="3" >3</option>
+                  <option value="4" >4</option>
+                </select>
+              </label>
+
+
+            <label class="item item-input  item-toggle">
+                <div class="input-label">
+                 Publicar
+                </div>
+ 
+                 <label class="toggle toggle-assertive">
+                   <input  ng-model="question.state" name="questionSate" type="checkbox">
+                   <div class="track">
+                     <div class="handle"></div>
+                   </div>
+                 </label>
+
+              </label>
+            </div> -->
+<!-- 
+
+ <div class="list list-inset">
+                <label class="item item-input">
+                  <i class="icon placeholder-icon"> </i>
+                  <div class="input-label">
+	                  Senha: 
+                   </div>
+                  <input type="password" ng-model="question.password" placeholder="Senha" class="form-control" required>
+                </label>
+                <label class="item item-input">
+                  <i class="icon placeholder-icon"> </i>
+                  <div class="input-label">
+	                  Data de Término: 
+                   </div>
+                    <input ng-model="question.hora_termino" placeholder="dd/MM/AAAA" class="form-control" type="date" required> 
+
+                </label>
+ </div>
+ -->
+
+ 
+
+
+    </div>
+
+  <!-- ################################## -->
+     <div style="height:200px">
+      </div>
+
+ </ion-content>  
+<!-- </ion-pane> -->
+<!--  -->
+
+<script type="text/javascript">
+  
+  var qrcode = new QRCode("qrcode");
+
+function makeCode (dat) {      
+    qrcode.makeCode(dat);
+}
+$("#part_qrcode").hide()
+$("#part_waiting").hide()
+$("#part_finish").hide()
+
+
+</script>

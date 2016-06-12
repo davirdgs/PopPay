@@ -1,0 +1,87 @@
+      <ion-side-menus enable-menu-with-back-views="true">
+
+        <ion-side-menu-content>
+          <ion-nav-bar class="bar-stable myheader">
+          <!--   <ion-nav-back-button>
+            </ion-nav-back-button>
+ -->
+                <div class="tabs-striped tabs-top tabs-background-stable tabs-color-positive">
+            
+            <ion-nav-buttons side="left" class="myheader">
+            <div class="col-20">
+              <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+              </button>
+                  </div>
+               <div class=" ">
+                 <label class="h1title"> </label><br>
+                 <label class="h2title receberPag">PagPop</label>
+
+           </div>
+
+              </ion-nav-buttons>
+
+                  </div>
+          </ion-nav-bar>
+
+          <ion-nav-view name="menuContent" class="has-header"></ion-nav-view>
+
+
+            <div class="tabs">
+             <a class="tab-item" href="" ui-sref="tab.create">
+                <i class="icon  ion-social-usd"></i>
+                Create Transaction
+              </a>
+              
+              <a class="tab-item"  href="" ui-sref="tab.wallet" >
+                <i class="icon ion-checkmark"></i>
+                My Wallet
+              </a>
+             
+              <a class="tab-item" href="" ui-sref="tab.main">
+                <i class="icon ion-search"></i>
+                General Information
+              </a>
+            </div>
+
+
+        </ion-side-menu-content> 
+
+        <ion-side-menu side="left" class=" dark-bg dark-border">
+          <ion-header-bar class="bar-positive" style="height:88px">
+            <h1 class="title titleMenu">Menu</h1>
+          </ion-header-bar>
+          <ion-content>
+            <ul class="list">
+              <!-- Note each link has the 'menu-close' attribute so the menu auto closes when clicking on one of these links -->
+              <!-- <a href="#/event/check-in" class="item item-menu color-demo stable-bg stable-border" menu-close>New Question</a> -->
+              <a class="item item-menu  item-icon-right stable-bg stable-border" menu-close href="" ui-sref="tab.wallet">
+                  My Wallet
+                <i class="icon ion-lightbulb"></i>
+              </a>
+
+
+              <a class="item item-menu  item-icon-right stable-bg stable-border" menu-close href="" ui-sref="tab.create">
+                Create Transaction
+                <i class="icon ion-social-usd"></i>
+              </a>
+
+
+              <a class="item item-menu  item-icon-right stable-bg stable-border" menu-close href="" ui-sref="tab.main">
+                  General Information
+                <i class="icon ion-search"></i>
+              </a>
+
+               <a class="item item-menu  item-icon-right stable-bg stable-border" menu-close href="" ui-sref="logout">
+                  Logout
+                <i class="icon ion-arrow-down-a"></i>
+              </a>
+            </ul>
+          </ion-content>
+<!--           <div class="bar bar-footer bar-light">
+    <div class="title subfooter">
+    </div>
+  </div> -->
+  
+        </ion-side-menu>
+
+      </ion-side-menus>

@@ -1,0 +1,37 @@
+  <!-- ################################## -->
+
+  <ion-content class="padding bgazul" style="    padding-bottom: 100px; overflow: auto;">
+
+<div class="row">
+  <div class="col center">
+  <h4>Minha Carteira </h4>
+
+  </div>
+</div>
+  <!-- ################################## -->
+
+  <div class="list card">
+
+  <a ng-repeat="qts in questions | orderBy: '-date_update'" href="" ui-sref="tab.details({ id: qts.id, password:qts.password })"  class="item ">
+   <!-- ng-click="viewDetails(qts.id,qts.password)" -->
+   <div class="row" >
+   <div class="col col-66 quebralinha2 fade">{{qts.id}} - {{qts.question}}</div>
+  <!--  <div class="col col-25">
+      ID: {{qts.id}}<br>
+      Senha: {{qts.password}} 
+    </div>
+   -->
+   <div class="col  text-right " > 
+     <div class="label {{qts.label}}-bg {{qts.label}}-border  respType respType2" style="padding:10px !important">
+     {{qts.status}}
+         <span title="{{qts.status}}" >
+             <i class="{{qts.icon}}"></i>
+         </span> 
+     </div>
+   </div>
+</div>
+  </a>
+ 
+</div>
+
+</ion-content>
