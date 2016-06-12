@@ -1,0 +1,6 @@
+framework module Pods_MasterCardHack {
+  umbrella header "Pods-MasterCardHack-umbrella.h"
+
+  export *
+  module * { export * }
+}
