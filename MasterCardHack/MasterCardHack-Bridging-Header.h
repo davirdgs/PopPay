@@ -6,7 +6,7 @@
 //  Copyright © 2016 Davi Rodrigues. All rights reserved.
 //
 
-#import <Simplify/Simplify.h>
+//#import <Simplify/Simplify.h>
 
 #ifndef MasterCardHack_Bridging_Header_h
 #define MasterCardHack_Bridging_Header_h

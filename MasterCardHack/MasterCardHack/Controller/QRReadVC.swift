@@ -14,7 +14,7 @@ class QRReadVC: UIViewController{//,SIMChargeCardViewControllerDelegate {
 
     let scanner = QRCode()
     var QRRead = String()
-    var chargeController = SIMChargeCardViewController()
+    //var chargeController = SIMChargeCardViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
